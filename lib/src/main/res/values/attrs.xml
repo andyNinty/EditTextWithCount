@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="EditTextWithCount">
+        <attr name="maxCount" format="integer" />
+        <attr name="textColor" format="color" />
+        <attr name="hintText" format="string" />
+        <attr name="leftDrawable" format="reference" />
+        <attr name="lines" format="integer" />
+        <attr name="textSize" format="dimension" />
+    </declare-styleable>
+</resources>
