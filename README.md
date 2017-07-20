@@ -6,6 +6,19 @@
 
 ![img](img/img.png)
 
+### 使用方法
+
+在xml文件中
+
+```xml
+<cn.andyleeblog.lib.EditTextWithCount
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@android:color/white"
+        app:hintText="请输入内容"
+        app:maxCount="14" />
+```
+
 ### 设置最大字符数
 
 ```java
