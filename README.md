@@ -1,8 +1,6 @@
 ## EditTextWithCount
 
-```
 [![](https://jitpack.io/v/andyNinty/EditTextWithCount.svg)](https://jitpack.io/#andyNinty/EditTextWithCount)
-```
 
 开发中经常用到的一个控件
 
