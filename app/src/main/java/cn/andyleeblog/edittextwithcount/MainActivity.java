@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
         EditTextWithCount editTextWithCount = (EditTextWithCount) findViewById(R.id.edittext);
         editTextWithCount.setLines(7);
         editTextWithCount.setMaxCount(120);
+        editTextWithCount.setHintText("多行edittext");
         editTextWithCount.setViewOrientation(LinearLayout.VERTICAL);
     }
 }
