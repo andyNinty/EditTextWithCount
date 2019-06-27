@@ -62,10 +62,7 @@ public class EditTextWithCount extends LinearLayout {
         editText.setPadding(offset, offset, offset, offset);
         editText.setBackgroundColor(Color.WHITE);
         editText.setTextColor(textColor);
-        editText.setGravity(Gravity.TOP);//EditText多行
         editText.setTextSize(TypedValue.COMPLEX_UNIT_PX, textSize);
-        if (lines == 1) editText.setGravity(Gravity.CENTER_VERTICAL);
-        editText.setLines(1);
         editText.setHint(hintText);
         editText.setHintTextColor(context.getResources().getColor(R.color.edit_hint_textcolor));
         editText.setFilters(new InputFilter[]{new InputFilter.LengthFilter(maxCount)});
@@ -83,6 +80,13 @@ public class EditTextWithCount extends LinearLayout {
         textView.setTextColor(ContextCompat.getColor(getContext(), R.color.text_color));
         addView(textView, lp);
         textView.setText(getCountText(0));
+        editText.setLines(lines);
+        if (lines == 1) {
+            editText.setGravity(Gravity.CENTER_VERTICAL);
+        } else {
+            editText.setGravity(Gravity.TOP);//EditText多行
+            setViewOrientation(LinearLayout.VERTICAL);
+        }
         editText.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -143,6 +147,7 @@ public class EditTextWithCount extends LinearLayout {
             editText.setGravity(Gravity.CENTER_VERTICAL);//EditText多行
         } else {
             editText.setGravity(Gravity.TOP);
+            setViewOrientation(LinearLayout.VERTICAL);
         }
     }
 
@@ -206,6 +211,8 @@ public class EditTextWithCount extends LinearLayout {
     public void setViewOrientation(int orientation) {
         setOrientation(orientation);
         LayoutParams lp = new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.MATCH_PARENT);
+        int margin = this.getResources().getDimensionPixelOffset(R.dimen.view_space_small);
+        lp.setMargins(0, 0, margin, margin);
         lp.gravity = Gravity.END;
         textView.setLayoutParams(lp);
     }

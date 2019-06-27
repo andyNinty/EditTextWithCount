@@ -22,5 +22,6 @@
         android:layout_marginTop="16dp"
         android:background="@android:color/white"
         app:hintText="请输入内容"
-        app:maxCount="14" />
+        app:lines="5"
+        app:maxCount="200" />
 </LinearLayout>
