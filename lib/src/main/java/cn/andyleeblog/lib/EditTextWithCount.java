@@ -66,7 +66,7 @@ public class EditTextWithCount extends LinearLayout {
         editText.setHint(hintText);
         editText.setHintTextColor(context.getResources().getColor(R.color.edit_hint_textcolor));
         editText.setFilters(new InputFilter[]{new InputFilter.LengthFilter(maxCount)});
-        LayoutParams layoutParams = new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.MATCH_PARENT, 1.0f);
+        LayoutParams layoutParams = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT, 1.0f);
         layoutParams.setMargins(offset, offset, offset, offset);
         addView(editText, layoutParams);
         if (leftDrawable != 0) {
@@ -74,7 +74,7 @@ public class EditTextWithCount extends LinearLayout {
             editText.setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(getContext(), leftDrawable), null, null, null);
         }
         textView = new TextView(context);
-        LayoutParams lp = new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.MATCH_PARENT);
+        LayoutParams lp = new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
         lp.setMargins(margin, 0, margin, 0);
         textView.setGravity(Gravity.CENTER_VERTICAL);
         textView.setTextColor(ContextCompat.getColor(getContext(), R.color.text_color));
@@ -210,7 +210,7 @@ public class EditTextWithCount extends LinearLayout {
      */
     public void setViewOrientation(int orientation) {
         setOrientation(orientation);
-        LayoutParams lp = new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.MATCH_PARENT);
+        LayoutParams lp = new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
         int margin = this.getResources().getDimensionPixelOffset(R.dimen.view_space_small);
         lp.setMargins(0, 0, margin, margin);
         lp.gravity = Gravity.END;
